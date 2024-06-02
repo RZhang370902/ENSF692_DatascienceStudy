@@ -1,0 +1,38 @@
+import numpy as np
+rng = np.random.default_rng(seed=1701)
+
+x2 = rng.integers(10, size =(3,4))
+print(x2)
+print()
+
+#No-copy view
+print("no-copy view")
+print("x2")
+print(x2)
+x2_sub=x2[:2,:2]
+print("x2_sub = x2[:2,:2]")
+print(x2_sub)
+print()
+print("change x2[0,0] to 99")
+print("x2[0,0] = 99")
+x2[0,0]=99
+print(x2_sub)
+print(x2)
+print("\n")
+
+
+#copy
+print("create copy, x2_sub_copy = x2[:2, :2].copy()")
+x2_sub_copy = x2[:2, :2].copy()
+print(x2_sub_copy)
+print("change x2[0,0] to 55")
+x2[0,0]=55
+print("x2")
+print(x2)
+print()
+print("x2_sub_copy")
+print(x2_sub_copy)
+print()
+print("x2_sub")
+print(x2_sub)
+print()
